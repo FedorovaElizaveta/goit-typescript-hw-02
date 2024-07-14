@@ -1,0 +1,20 @@
+.loadMoreBtnWrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.loadMoreBth {
+  width: 120px;
+  height: 40px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #4d5ae5;
+  transition: background-color 250ms ease-in-out;
+}
+
+.loadMoreBth:hover,
+.loadMoreBth:focus {
+  background-color: #404bbf;
+}

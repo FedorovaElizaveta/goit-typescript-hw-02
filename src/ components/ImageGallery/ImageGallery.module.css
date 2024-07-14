@@ -1,0 +1,19 @@
+.gallery {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.galleryItem {
+  width: 400px;
+  border: 1px solid #808080;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 250ms ease-in-out;
+}
+
+.galleryItem:hover {
+  transform: scale(1.03);
+}

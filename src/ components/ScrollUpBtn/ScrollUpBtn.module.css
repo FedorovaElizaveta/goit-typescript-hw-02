@@ -1,0 +1,25 @@
+.scrollUpBtnWrapper {
+  position: relative;
+}
+
+.scrollUpBtn {
+  position: fixed;
+  top: auto;
+  right: 25px;
+  bottom: 25px;
+  left: auto;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background-color: #4d5ae5;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 250ms ease-in-out;
+}
+
+.scrollUpBtn:hover,
+.scrollUpBtn:focus {
+  background-color: #404bbf;
+}
