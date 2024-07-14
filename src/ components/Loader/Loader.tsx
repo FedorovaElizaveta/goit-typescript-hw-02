@@ -5,7 +5,6 @@ const Loader = () => {
   return (
     <div className={css.loader}>
       <ThreeDots
-        visible={true}
         height="80"
         width="80"
         color="#4d5ae5"

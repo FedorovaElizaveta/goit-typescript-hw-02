@@ -2,15 +2,25 @@ import css from "./SearchBar.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import { FiSearch } from "react-icons/fi";
 import ScrollUpBtn from "../ScrollUpBtn/ScrollUpBtn";
-import { useRef } from "react";
+import { useRef, FormEvent, FC } from "react";
 
-const SearchBar = ({ getQuery }) => {
-  const headerRef = useRef(null);
+interface SearchBarProps {
+  getQuery: (velue: string) => Promise<void>;
+}
 
-  const handleSubmit = (e) => {
+const SearchBar: FC<SearchBarProps> = ({ getQuery }) => {
+  const headerRef = useRef<HTMLDivElement | null>(null);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const value = e.target.elements.searchInput.value.trim();
+    const target = e.target as typeof e.target & {
+      elements: {
+        searchInput: HTMLInputElement;
+      };
+    };
+
+    const value = target.elements.searchInput.value.trim();
 
     if (!value) {
       toast.error("Please, fill the field");
@@ -19,7 +29,7 @@ const SearchBar = ({ getQuery }) => {
 
     getQuery(value);
 
-    e.target.reset();
+    e.currentTarget.reset();
   };
 
   return (

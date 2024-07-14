@@ -1,6 +1,11 @@
+import { FC } from "react";
 import css from "./LoadMoreBtn.module.css";
 
-const LoadMoreBtn = ({ handleLoadMore }) => {
+interface LoadMoreBtnProps {
+  handleLoadMore: () => Promise<void>;
+}
+
+const LoadMoreBtn: FC<LoadMoreBtnProps> = ({ handleLoadMore }) => {
   return (
     <div className={css.loadMoreBtnWrapper}>
       <button

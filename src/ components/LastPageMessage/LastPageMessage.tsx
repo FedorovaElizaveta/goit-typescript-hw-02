@@ -1,8 +1,12 @@
+import { FC } from "react";
 import css from "./LastPageMessage.module.css";
 
-const LastPageMessage = ({ page, totalPages }) => {
-  console.log("page", page);
-  console.log("totalPages", totalPages);
+interface LastPageMessageProps {
+  page: number;
+  totalPages: number;
+}
+
+const LastPageMessage: FC<LastPageMessageProps> = ({ page, totalPages }) => {
   return (
     <p className={css.errorNotFound}>
       Page {page} of {totalPages}

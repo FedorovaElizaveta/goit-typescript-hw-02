@@ -1,10 +1,22 @@
+import { FC } from "react";
+import { IPhotos } from "../../types";
 import css from "./ImageModal.module.css";
 import Modal from "react-modal";
 
+interface ImageModalProps {
+  photo: IPhotos;
+  closeModal: () => void;
+  isModalOpen: boolean;
+}
+
 Modal.setAppElement("#root");
 
-const ImageModal = ({ photo, closeModal, isModalOpen }) => {
-  const customStyles = {
+const ImageModal: FC<ImageModalProps> = ({
+  photo,
+  closeModal,
+  isModalOpen,
+}) => {
+  const customStyles: Modal.Styles = {
     content: {
       top: "50%",
       left: "50%",
@@ -21,7 +33,7 @@ const ImageModal = ({ photo, closeModal, isModalOpen }) => {
       padding: "10px",
       backgroundColor: "#343434",
       borderColor: "#343434",
-      BorderRadius: "8px",
+      borderRadius: "8px",
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.75)",

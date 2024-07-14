@@ -1,9 +1,14 @@
 import { MdKeyboardArrowUp } from "react-icons/md";
 import css from "./ScrollUpBtn.module.css";
+import { FC } from "react";
 
-const ScrollUpBtn = ({ headerRef }) => {
+interface ScrollUpBtnProps {
+  headerRef: React.RefObject<HTMLDivElement> | null;
+}
+
+const ScrollUpBtn: FC<ScrollUpBtnProps> = ({ headerRef }) => {
   const handleClick = () => {
-    headerRef.current.scrollIntoView({ behavior: "smooth" });
+    headerRef?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

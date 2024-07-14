@@ -1,6 +1,13 @@
+import { FC } from "react";
+import { IPhotos } from "../../types";
 import css from "./ImageCard.module.css";
 
-const ImageCard = ({ photo, onPhotoClick }) => {
+interface ImageCardProps {
+  photo: IPhotos;
+  onPhotoClick: (photo: IPhotos) => void;
+}
+
+const ImageCard: FC<ImageCardProps> = ({ photo, onPhotoClick }) => {
   return (
     <div className={css.galleryImgWrapper} onClick={() => onPhotoClick(photo)}>
       <img
